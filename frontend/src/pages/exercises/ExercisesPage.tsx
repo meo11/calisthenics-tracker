@@ -130,7 +130,7 @@ export default function ExercisesPage() {
                         <div className="font-mono text-xs text-muted mt-0.5">{ex.measurementType}</div>
                       </div>
                       {ex.isDefault ? (
-                        <Lock size={13} className="text-muted flex-shrink-0" title="Default exercise" />
+                        <span title="Default exercise"><Lock size={13} className="text-muted flex-shrink-0" /></span>
                       ) : (
                         <div className="flex items-center gap-1">
                           <button onClick={() => openEdit(ex)} className="p-1.5 rounded text-muted hover:text-accent hover:bg-accentDim transition-all">
