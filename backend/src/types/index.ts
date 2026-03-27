@@ -3,9 +3,6 @@ import { Types } from 'mongoose';
 
 export interface AuthRequest extends Request {
   userId?: string;
-  body: Record<string, unknown>;
-  query: Record<string, unknown>;
-  params: Record<string, string>;
 }
 
 export type { Response, NextFunction };
