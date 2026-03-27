@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-textPrimary font-body antialiased;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(245, 166, 35, 0.03) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 10%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-wide;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-borderLight;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface border border-border rounded-xl p-5;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-200 hover:border-borderLight hover:bg-surfaceHover;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-background font-display font-semibold tracking-wider text-sm uppercase px-5 py-2.5 rounded-lg hover:bg-accentHover transition-colors duration-150 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-surface border border-border text-textPrimary font-body text-sm px-5 py-2.5 rounded-lg hover:bg-surfaceHover hover:border-borderLight transition-all duration-150 disabled:opacity-40;
+  }
+
+  .btn-ghost {
+    @apply text-textSecondary font-body text-sm px-4 py-2 rounded-lg hover:bg-surfaceHover hover:text-textPrimary transition-all duration-150;
+  }
+
+  .btn-danger {
+    @apply bg-danger/10 border border-danger/30 text-danger font-body text-sm px-4 py-2 rounded-lg hover:bg-danger/20 transition-all duration-150;
+  }
+
+  .input {
+    @apply w-full bg-background border border-border rounded-lg px-4 py-2.5 text-textPrimary text-sm placeholder-muted focus:outline-none focus:border-accent transition-colors duration-150;
+  }
+
+  .label {
+    @apply block text-xs font-display font-semibold tracking-widest uppercase text-textSecondary mb-1.5;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-medium;
+  }
+
+  .section-title {
+    @apply font-display text-2xl font-bold tracking-wide text-textPrimary uppercase;
+  }
+
+  .stat-value {
+    @apply font-display text-4xl font-bold tracking-tight text-textPrimary;
+  }
+
+  .divider {
+    @apply border-t border-border my-4;
+  }
+}
+
+/* Recharts custom styles */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #111318 !important;
+  border: 1px solid #1e2330 !important;
+  border-radius: 8px !important;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #1e2330 !important;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-accent {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.4s ease forwards;
+}
+
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
