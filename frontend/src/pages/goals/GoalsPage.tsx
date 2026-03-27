@@ -121,7 +121,7 @@ export default function GoalsPage() {
 
                     <div className="font-mono text-sm text-textSecondary mb-2">
                       Target: <span className="text-accent font-semibold">{goal.targetValue}</span>
-                      {goal.goalType === 'duration' ? 's' : goal.goalType === 'weight' ? 'kg' : goal.goalType === 'distance' ? 'm' : ''}
+                      {goal.goalType === 'duration' ? 's' : goal.goalType === 'weight' ? 'kg' : ''}
                       {goal.targetSets && ` × ${goal.targetSets} sets`}
                     </div>
 
