@@ -1,9 +1,14 @@
-import { Request } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { Types } from 'mongoose';
 
 export interface AuthRequest extends Request {
   userId?: string;
+  body: Record<string, unknown>;
+  query: Record<string, unknown>;
+  params: Record<string, string>;
 }
+
+export type { Response, NextFunction };
 
 export type ExerciseCategory = 'push' | 'pull' | 'legs' | 'core' | 'cardio' | 'mobility' | 'skill';
 export type MeasurementType = 'reps' | 'duration' | 'distance';
